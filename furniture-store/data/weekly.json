@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Pot",
+        "price": "$ 223,00",
+        "status":"sale",
+        "image": "/weekly/flower.png"
+    },
+
+    {
+        "name": "Lamp",
+        "price": "$ 223,00",
+        "status":"new",
+        "image": "/weekly/lamp.png"
+    },
+
+    {
+        "name": "Chair",
+        "price": "$ 223,00",
+        "status":"sold",
+        "image": "/weekly/chair.png"
+    }
+]
