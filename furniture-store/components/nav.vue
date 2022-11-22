@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed-top">
+  <div class="fixed-top app" :class="{ onScroll: !view.topOfPage }">
     <b-container>
       <b-navbar toggleable="lg" type="light" variant="info">
         <b-navbar-brand to="/" class="logo" :class="color">soudemy</b-navbar-brand>
@@ -43,7 +43,7 @@
               <nuxt-link to="/about" :class="color"> About us </nuxt-link>
             </b-nav-item>
             <b-nav-item>
-              <nuxt-link to="/blog" :class="color"> Blog </nuxt-link>
+              <nuxt-link to="/blogs" :class="color"> Blog </nuxt-link>
             </b-nav-item>
           </b-navbar-nav>
 
@@ -130,10 +130,39 @@
 <script>
 export default {
   props: ["color"],
+
+  data() {
+    return {
+      view: {
+        topOfPage: true,
+      },
+    };
+  },
+
+  beforeMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      if (window.pageYOffset > 10) {
+        if (this.view.topOfPage) this.view.topOfPage = false;
+      } else if (window.pageYOffset < 10) {
+        if (!this.view.topOfPage) this.view.topOfPage = true;
+      } else {
+      }
+      {
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
+.onScroll {
+  background-color: rgb(176, 176, 176);
+  transition: all 0.5s ease-in-out;
+}
 .navbar {
   background: none !important;
 }
@@ -168,5 +197,10 @@ a {
   color: #fff;
   stroke: #fff;
   border-color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  .app {
+    background: rgb(176, 176, 176);
+  }
 }
 </style>

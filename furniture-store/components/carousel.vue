@@ -118,4 +118,23 @@ export default {
   margin-left: 10px;
   transition: all 0.7s ease-in-out;
 }
+
+@media only screen and (max-width: 600px) {
+  .caro-h1 {
+    font-size: 20px;
+  }
+
+  .caro-p {
+    font-size: 10px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+
+  .caro-p {
+    width: 100%;
+  }
+}
 </style>
