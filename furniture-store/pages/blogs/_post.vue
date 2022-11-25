@@ -6,6 +6,7 @@
 
     <section>
       <h1>{{ post.title }}</h1>
+      <img :src="post.image" alt="" />
     </section>
   </div>
 </template>
@@ -16,7 +17,7 @@ export default {
   data() {
     return {
       blogs: blog,
-      slug: this.$route.params,
+      slug: this.$route.params.post,
     };
   },
 
@@ -28,4 +29,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+section {
+  margin-top: 120px;
+}
+</style>

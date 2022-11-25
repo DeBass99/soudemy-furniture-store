@@ -1,4 +1,5 @@
-[
+
+ [
     {
         "id": 1,
         "date": "29 sep,2022",
@@ -12,7 +13,28 @@
         "id": 2,
         "date": "29 sep,2022",
         "author": "Efe Rebecca",
-        "title": "Your office should have only natural materials",
+        "title": "Your home should have a luxury taste",
         "image": "/blog/blg 2.png"
+    },
+    {
+        "id": 3,
+        "date": "29 sep,2022",
+        "author": "Destine Okono",
+        "title": "Paint your office in natural colors only",
+        "image": "/blog/blg 3.png"
+    },
+    {
+        "id": 4,
+        "date": "29 sep,2022",
+        "author": "Efe Rebecca",
+        "title": "Arrange your office chairs in natural colors only",
+        "image": "/blog/blg 4.png"
+    },
+    {
+        "id": 5,
+        "date": "29 sep,2022",
+        "author": "Destine Okono",
+        "title": "Arrange your office sofa in bright colors",
+        "image": "/blog/blg 5.png"
     }
 ]

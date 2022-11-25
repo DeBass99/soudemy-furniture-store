@@ -159,7 +159,17 @@
     <section class="blogs">
       <b-container>
         <div class="blog">
-          <blogList />
+          <b-card-group deck>
+            <blogItem
+              v-for="blog in filterItems(blogs)"
+              :key="blog.id"
+              :title="blog.title"
+              :author="blog.author"
+              :date="blog.date"
+              :image="`${blog.image}`"
+              :slug="`/blogs/${blog.id}`"
+            />
+          </b-card-group>
         </div>
       </b-container>
     </section>
@@ -173,6 +183,7 @@
 </template>
 
 <script>
+import json from "~/data/blog.json";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -182,6 +193,7 @@ export default {
   data() {
     return {
       nav: "white",
+      blogs: json,
     };
   },
   mounted() {
@@ -220,6 +232,14 @@ export default {
       opacity: 0,
       stagger: true,
     });
+  },
+
+  methods: {
+    filterItems: function (items) {
+      return items.filter(function (item) {
+        return item.id < 3;
+      });
+    },
   },
 };
 </script>
@@ -319,6 +339,7 @@ img.image {
 .blog {
   display: flex;
   justify-content: center;
+  padding: 0px;
 }
 
 .testimonials {

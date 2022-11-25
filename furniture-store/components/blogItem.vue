@@ -5,13 +5,13 @@
       img-alt="Image"
       img-top
       tag="article"
-      style="max-width: 30rem"
+      style="max-width: 20rem"
       class="mb-2"
-    >
+      >''
       <b-card-text>
         <p class="info">{{ date }} / by {{ author }}</p>
         <h4>{{ title }}</h4>
-        <nuxt-link to="#"><p class="info">read more</p></nuxt-link>
+        <nuxt-link :to="slug"><p class="info">read more</p></nuxt-link>
       </b-card-text>
     </b-card>
   </div>
@@ -19,10 +19,7 @@
 
 <script>
 export default {
-  data() {
-    return {};
-  },
-  props: ["author", "date", "title", "image"],
+  props: ["author", "date", "title", "image", "slug"],
 };
 </script>
 
