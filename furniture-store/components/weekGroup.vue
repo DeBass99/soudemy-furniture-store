@@ -6,7 +6,6 @@
         v-for="(product, i) in products"
         :key="i"
         :name="product.name"
-        :price="product.price"
         :status="product.status"
         :image="`${product.image}`"
       />

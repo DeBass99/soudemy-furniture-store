@@ -54,7 +54,7 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat dolor
               odio odio malesuada at condimentum adipiscing iaculis semper.
             </p>
-            <button class="caro-btn btn-black">
+            <button class="caro-btn btn-black" @click="$router.push('/shop')">
               view more <img src="~/assets/black arrow.png" alt="" />
             </button>
           </b-col>

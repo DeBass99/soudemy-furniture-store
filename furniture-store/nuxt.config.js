@@ -16,7 +16,8 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css' }
     ]
   },
 
@@ -26,7 +27,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src:'~/plugins/carousel.js', ssr:false}
+    {src:'~/plugins/carousel.js', ssr:false},
+    {src:'~/plugins/dropdown.js', ssr:false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

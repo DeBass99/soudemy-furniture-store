@@ -98,6 +98,7 @@
       </section>
 
       <section class="blog">
+        <h3>Latest Blog Posts</h3>
         <b-card-group deck>
           <blogItem
             v-for="blog in filterItems(blogs)"
@@ -137,7 +138,7 @@ export default {
   background-image: url("~/assets/about head.png");
   background-size: cover;
   height: 468px;
-  margin-top: 65px;
+  margin-top: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,7 +186,12 @@ export default {
 
 .blog {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.blog h3 {
+  margin-bottom: 70px;
 }
 
 [deck] {

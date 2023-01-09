@@ -2,9 +2,6 @@
   <div>
     <carousel
       :scrollPerPage="true"
-      :autoplay="true"
-      :autoplayTimeout="5000"
-      :autoplayHoverPause="true"
       :mouse-drag="true"
       :perPageCustom="[
         [200, 1],

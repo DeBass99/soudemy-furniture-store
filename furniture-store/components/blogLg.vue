@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="app">
     <b-card
       :img-src="image"
       img-alt="Image"
       img-top
       tag="article"
-      style="max-width: 20rem"
+      style="max-width: 50rem"
       class="mb-2"
     >
       <b-card-text>
         <p class="info">{{ date }} / by {{ author }}</p>
-        <h4>{{ title }}</h4>
+        <h2>{{ title }}</h2>
         <nuxt-link :to="slug"><p class="info">read more</p></nuxt-link>
       </b-card-text>
     </b-card>

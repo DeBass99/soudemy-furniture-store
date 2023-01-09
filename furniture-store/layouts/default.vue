@@ -1,6 +1,7 @@
 <template>
   <div>
     <Nuxt />
+    <NotificationList />
     <Footer />
   </div>
 </template>
