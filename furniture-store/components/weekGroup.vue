@@ -32,7 +32,7 @@ export default {
         end: "+100px",
         toggleActions: "play none none reverse",
       },
-      duration: 0.7,
+      duration: 0.4,
       stagger: 0.2,
       y: "-50px",
       opacity: 0,

@@ -6,11 +6,11 @@
 
     <b-container>
       <div class="page">
-        <b-row>
+        <b-row class="switch">
           <b-col md="8">
             <div class="content">
               <blogLg
-                v-for="blog in blogs"
+                v-for="blog in filteredBlogs"
                 :key="blog.id"
                 :title="blog.title"
                 :author="blog.author"
@@ -23,12 +23,17 @@
 
           <b-col md="4">
             <div class="search">
-              <form action="submit" class="form">
-                <input type="text" placeholder="search..." />
-                <button type="submit">
+              <div class="form">
+                <input
+                  type="text"
+                  placeholder="search..."
+                  v-model="search"
+                  @keypress.enter="clickFilter()"
+                />
+                <button @click.prevent="clickFilter()">
                   <img src="~/assets/search button.svg" alt="" />
                 </button>
-              </form>
+              </div>
             </div>
 
             <div class="ad">
@@ -63,13 +68,25 @@ export default {
   data() {
     return {
       blogs: blog,
+      search: "",
+      filteredBlogs: [],
     };
+  },
+
+  mounted() {
+    this.filteredBlogs = this.blogs;
   },
 
   methods: {
     filterItems: function (items) {
       return items.filter(function (item) {
         return item.id < 4;
+      });
+    },
+
+    clickFilter() {
+      this.filteredBlogs = this.blogs.filter((blog) => {
+        return blog.title.toLowerCase().match(this.search.toLowerCase());
       });
     },
   },
@@ -124,6 +141,7 @@ strong {
 
 .search input {
   border: none;
+  width: 100%;
 }
 
 .search input:focus {
@@ -150,5 +168,12 @@ strong {
 
 a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .switch {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 </style>

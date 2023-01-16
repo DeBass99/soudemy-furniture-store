@@ -349,13 +349,8 @@ img.image {
 }
 
 @media only screen and (max-width: 600px) {
-  .category {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .reverse {
-    flex-direction: column-reverse;
+  .categories {
+    display: none;
   }
 
   .hide-mobile {

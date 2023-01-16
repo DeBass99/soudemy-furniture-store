@@ -10,7 +10,8 @@
           <b-col md="8">
             <b-card-group deck class="cards">
               <product
-                v-for="product in products"
+                class="single-card"
+                v-for="product in filteredProducts"
                 :key="product.id"
                 :title="product.title"
                 :price="product.price"
@@ -22,22 +23,24 @@
 
           <b-col md="4" class="grid-two">
             <div class="search">
-              <form action="submit" class="form">
-                <input type="text" placeholder="search..." />
-                <button type="submit">
+              <div class="form">
+                <input
+                  type="text"
+                  placeholder="search..."
+                  v-model="search"
+                  @keypress.enter="clickFilter"
+                />
+                <button @click.prevent="clickFilter()">
                   <img src="~/assets/search button.svg" alt="" />
                 </button>
-              </form>
+              </div>
 
               <div class="categories">
                 <h4>Categories</h4>
                 <div class="buttons">
-                  <button>Ceiling</button>
-                  <button>Floor</button>
-                  <button>Led</button>
-                  <button>Modern</button>
-                  <button>Retro</button>
-                  <button>Wood</button>
+                  <button @click="all">All</button>
+                  <button @click="light">Light</button>
+                  <button @click="dark">Dark</button>
                 </div>
               </div>
             </div>
@@ -50,24 +53,53 @@
 
 <script>
 import { mapState } from "Vuex";
+import { gsap } from "gsap";
+import { Flip } from "gsap/Flip";
 export default {
   data() {
-    return {};
+    return {
+      search: "",
+      filteredProducts: [],
+    };
   },
 
   computed: {
     ...mapState({
       products: (state) => state.product.products,
     }),
+
+    filteredProduct() {
+      return this.products.filter((product) => {
+        return product.title.toLowerCase().match(this.search.toLowerCase());
+      });
+    },
   },
 
-  mounted() {},
+  mounted() {
+    this.filteredProducts = this.products;
+  },
 
   methods: {
-    filterItems: function (items) {
-      return items.filter(function (item) {
-        return item.id < 4;
+    clickFilter() {
+      this.filteredProducts = this.products.filter((product) => {
+        return product.title.toLowerCase().match(this.search.toLowerCase());
       });
+    },
+
+    light() {
+      this.filteredProducts = this.products.filter((product) => {
+        return product.category.match("light");
+      });
+    },
+
+    dark() {
+      this.filteredProducts = this.products.filter((product) => {
+        return product.category.match("dark");
+      });
+    },
+
+    all() {
+      this.filteredProducts = this.products;
     },
   },
 };
@@ -91,6 +123,7 @@ export default {
 
 .search input {
   border: none;
+  width: 100%;
 }
 
 .search input:focus {
@@ -113,7 +146,7 @@ a {
 
 .buttons {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .buttons button {

@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" v-if="cart.length >= 1">
     <div class="mini-cart" v-for="item in cart" :key="item.id">
       <div class="title">
         <h6>{{ item.product.title }}</h6>
@@ -28,6 +28,12 @@
       <button @click="$router.push('/checkout')">Proceed to checkout</button>
     </div>
   </div>
+
+  <div class="empty" v-else>
+    <img src="~/assets/empty cart.png" alt="" />
+    <h4>Your Cart is Empty</h4>
+    <p>Looks like you haven’t added anything to your cart yet</p>
+  </div>
 </template>
 
 <script>
@@ -36,7 +42,9 @@ import { mapState } from "Vuex";
 import { mapGetters } from "Vuex";
 export default {
   data() {
-    return {};
+    return {
+      cartFilled: false,
+    };
   },
 
   computed: {
@@ -103,5 +111,28 @@ s
 .total {
   display: flex;
   justify-content: space-between;
+}
+
+.empty {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.empty img {
+  width: 125px;
+}
+
+.empty h4 {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.empty p {
+  font-size: 12px;
 }
 </style>

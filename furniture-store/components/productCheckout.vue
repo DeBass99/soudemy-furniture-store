@@ -31,7 +31,11 @@ export default {
 }
 
 img {
-  width: 125px;
+  width: 60px;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 .app button {

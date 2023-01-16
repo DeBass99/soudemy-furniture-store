@@ -40,15 +40,6 @@
           </b-col>
 
           <b-col md="4">
-            <div class="search">
-              <form action="submit" class="form">
-                <input type="text" placeholder="search..." />
-                <button type="submit">
-                  <img src="~/assets/search button.svg" alt="" />
-                </button>
-              </form>
-            </div>
-
             <div class="ad">
               <h3>Lorem ipsum dolor sit amet, consectetur</h3>
               <img src="~/assets/ad.png" alt="" style="width: 100%" />

@@ -99,7 +99,7 @@
 
       <section class="blog">
         <h3>Latest Blog Posts</h3>
-        <b-card-group deck>
+        <b-card-group deck class="group">
           <blogItem
             v-for="blog in filterItems(blogs)"
             :key="blog.id"
@@ -210,6 +210,12 @@ export default {
 
   .perk-title {
     justify-content: center;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>
