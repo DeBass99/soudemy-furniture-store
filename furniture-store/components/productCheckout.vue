@@ -35,7 +35,7 @@ img {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .app button {
@@ -43,5 +43,11 @@ h3 {
   height: 35px;
   background-color: #2b2b2b;
   color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    font-size: 16px;
+  }
 }
 </style>

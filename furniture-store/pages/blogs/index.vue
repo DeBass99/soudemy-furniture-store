@@ -8,7 +8,16 @@
       <div class="page">
         <b-row class="switch">
           <b-col md="8">
-            <div class="content">
+            <div class="empty" v-if="none">
+              <img src="~/assets/not found.png" alt="" />
+              <h1>Result Not Found</h1>
+              <p>
+                Please try again with another <br />
+                keywords or maybe use generic term
+              </p>
+            </div>
+
+            <div class="content" v-else>
               <blogLg
                 v-for="blog in filteredBlogs"
                 :key="blog.id"
@@ -70,6 +79,7 @@ export default {
       blogs: blog,
       search: "",
       filteredBlogs: [],
+      none: false,
     };
   },
 
@@ -88,6 +98,12 @@ export default {
       this.filteredBlogs = this.blogs.filter((blog) => {
         return blog.title.toLowerCase().match(this.search.toLowerCase());
       });
+
+      if (this.filteredBlogs == 0) {
+        this.none = true;
+      } else {
+        this.none = false;
+      }
     },
   },
 };
@@ -168,6 +184,20 @@ strong {
 
 a {
   text-decoration: none;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.empty h1 {
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 600px) {

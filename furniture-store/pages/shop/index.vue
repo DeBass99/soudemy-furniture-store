@@ -8,17 +8,28 @@
       <div class="page">
         <b-row class="grid-row">
           <b-col md="8">
-            <b-card-group deck class="cards">
-              <product
-                class="single-card"
-                v-for="product in filteredProducts"
-                :key="product.id"
-                :title="product.title"
-                :price="product.price"
-                :image="`${product.image}`"
-                :slug="`/shop/${product.id}`"
-              />
-            </b-card-group>
+            <div class="empty" v-if="none">
+              <img src="~/assets/not found.png" alt="" />
+              <h1>Result Not Found</h1>
+              <p>
+                Please try again with another <br />
+                keywords or maybe use generic term
+              </p>
+            </div>
+
+            <div v-else>
+              <b-card-group deck class="cards">
+                <product
+                  class="single-card"
+                  v-for="product in filteredProducts"
+                  :key="product.id"
+                  :title="product.title"
+                  :price="product.price"
+                  :image="`${product.image}`"
+                  :slug="`/shop/${product.id}`"
+                />
+              </b-card-group>
+            </div>
           </b-col>
 
           <b-col md="4" class="grid-two">
@@ -60,6 +71,7 @@ export default {
     return {
       search: "",
       filteredProducts: [],
+      none: false,
     };
   },
 
@@ -84,6 +96,12 @@ export default {
       this.filteredProducts = this.products.filter((product) => {
         return product.title.toLowerCase().match(this.search.toLowerCase());
       });
+
+      if (this.filteredProducts == 0) {
+        this.none = true;
+      } else {
+        this.none = false;
+      }
     },
 
     light() {
@@ -156,6 +174,20 @@ a {
   font-weight: 400;
   font-size: 19px;
   color: #7e7e7e;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.empty h1 {
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 600px) {

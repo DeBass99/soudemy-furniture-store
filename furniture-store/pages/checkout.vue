@@ -15,7 +15,14 @@
         </div>
         <hr />
         <div class="payment">
-          <button class="pay">Pay Now</button>
+          <b-button v-b-modal.modal-center class="pay" @click="reload">Pay Now</b-button>
+
+          <b-modal id="modal-center" centered hide-footer hide-header>
+            <div class="modal-item">
+              <img src="~/assets/order.png" alt="" class="modal-img" />
+              <h1 class="modal-text">Your order is being processed</h1>
+            </div>
+          </b-modal>
         </div>
       </div>
     </b-container>
@@ -47,6 +54,12 @@ export default {
 
   methods: {
     ...mapActions("cart", { removeAll: "clearCart" }),
+
+    reload() {
+      setTimeout(() => {
+        this.removeAll();
+      }, 3000);
+    },
   },
 };
 </script>
@@ -77,6 +90,22 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modal-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1.modal-text {
+  text-align: center;
+  padding: 20px;
+}
+
+img.modal-img {
+  width: 50%;
 }
 
 button.pay {

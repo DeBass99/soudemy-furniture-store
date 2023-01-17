@@ -7,7 +7,7 @@
         <div class="hide-desktop">
           <b-nav-item>
             <div>
-              <b-button v-b-modal.modal-2 class="search-modal">
+              <b-button v-b-modal.modal-scrollable class="search-modal">
                 <svg
                   width="27"
                   height="27"
@@ -33,16 +33,11 @@
                   /></svg
               ></b-button>
 
-              <b-modal id="modal-2" hide-footer hide-header>
+              <b-modal id="modal-scrollable" hide-footer hide-header>
                 <div class="search">
                   <div class="form">
-                    <input
-                      type="text"
-                      placeholder="search..."
-                      v-model="search"
-                      @keypress.enter="clickFilter"
-                    />
-                    <button @click.prevent="clickFilter()">
+                    <input type="text" placeholder="search..." v-model="search" />
+                    <button>
                       <img src="~/assets/search button.svg" alt="" />
                     </button>
                   </div>
@@ -199,13 +194,8 @@
                 <b-modal id="modal-1" hide-footer hide-header>
                   <div class="search">
                     <div class="form">
-                      <input
-                        type="text"
-                        placeholder="search..."
-                        v-model="search"
-                        @keypress.enter="clickFilter"
-                      />
-                      <button @click.prevent="clickFilter()">
+                      <input type="text" placeholder="search..." v-model="search" />
+                      <button>
                         <img src="~/assets/search button.svg" alt="" />
                       </button>
                     </div>

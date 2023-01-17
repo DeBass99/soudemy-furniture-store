@@ -16,11 +16,29 @@
             <div class="cart">
               <form class="form" @submit.prevent="addToCart">
                 <div class="quantity">
+                  <button
+                    class="btn btn-outline-secondary btn-quantity"
+                    type="button"
+                    @click="decrement"
+                  >
+                    -
+                  </button>
+
                   <b-form-input
                     type="number"
                     class="number"
                     v-model.number="quantityOfProduct"
+                    min="1"
+                    max="10"
                   ></b-form-input>
+
+                  <button
+                    class="btn btn-outline-secondary btn-quantity"
+                    type="button"
+                    @click="increment"
+                  >
+                    +
+                  </button>
                 </div>
 
                 <button type="submit" class="add">Add to cart</button>
@@ -128,6 +146,14 @@ export default {
       });
     },
 
+    //input functions
+    increment() {
+      this.quantityOfProduct++;
+    },
+    decrement() {
+      this.quantityOfProduct--;
+    },
+
     //Vuex functions
     addToCart() {
       this.addProduct({
@@ -178,6 +204,8 @@ input.number {
   width: 60px;
   outline: none;
   box-shadow: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 button.add {
@@ -225,10 +253,19 @@ button.add {
   display: flex;
 }
 
+.number {
+  margin: 10px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.btn-quantity {
+  color: #fff;
+  background-color: #393939;
 }
 
 @media only screen and (max-width: 600px) {

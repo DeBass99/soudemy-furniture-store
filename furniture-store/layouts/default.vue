@@ -1,10 +1,38 @@
 <template>
   <div>
-    <Nuxt />
-    <NotificationList />
-    <Footer />
+    <div v-if="preloader">
+      <Preloader />
+    </div>
+
+    <div v-else>
+      <Nuxt />
+      <NotificationList />
+      <Footer />
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      preloader: true,
+    };
+  },
+
+  methods: {
+    preloadTime() {
+      setTimeout(() => {
+        this.preloader = false;
+      }, 1000);
+    },
+  },
+
+  mounted() {
+    this.preloadTime();
+  },
+};
+</script>
 
 <style>
 html body {
@@ -14,7 +42,7 @@ html body {
 
 h2 {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 7d00;
   font-size: 44px;
   color: #373737;
 }
