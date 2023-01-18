@@ -1,0 +1,44 @@
+{
+  "BlogItem": {
+    "description": "Auto imported from components/blogItem.vue"
+  },
+  "BlogLg": {
+    "description": "Auto imported from components/blogLg.vue"
+  },
+  "Carousel": {
+    "description": "Auto imported from components/carousel.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/footer.vue"
+  },
+  "MiniCart": {
+    "description": "Auto imported from components/miniCart.vue"
+  },
+  "Nav": {
+    "description": "Auto imported from components/nav.vue"
+  },
+  "NotificationList": {
+    "description": "Auto imported from components/notificationList.vue"
+  },
+  "NotificationMessage": {
+    "description": "Auto imported from components/notificationMessage.vue"
+  },
+  "Preloader": {
+    "description": "Auto imported from components/preloader.vue"
+  },
+  "Product": {
+    "description": "Auto imported from components/product.vue"
+  },
+  "ProductCheckout": {
+    "description": "Auto imported from components/productCheckout.vue"
+  },
+  "Testimonials": {
+    "description": "Auto imported from components/testimonials.vue"
+  },
+  "WeekCard": {
+    "description": "Auto imported from components/weekCard.vue"
+  },
+  "WeekGroup": {
+    "description": "Auto imported from components/weekGroup.vue"
+  }
+}

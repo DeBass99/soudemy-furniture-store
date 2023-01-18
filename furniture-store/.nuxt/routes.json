@@ -1,0 +1,51 @@
+[
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_372376f6"
+  },
+  {
+    "name": "blogs",
+    "path": "/blogs",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\blogs\\\\index.vue",
+    "chunkName": "pages/blogs/index",
+    "_name": "_07b17e70"
+  },
+  {
+    "name": "checkout",
+    "path": "/checkout",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\checkout.vue",
+    "chunkName": "pages/checkout",
+    "_name": "_3a5ba026"
+  },
+  {
+    "name": "shop",
+    "path": "/shop",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\shop\\\\index.vue",
+    "chunkName": "pages/shop/index",
+    "_name": "_ea46f676"
+  },
+  {
+    "name": "blogs-post",
+    "path": "/blogs/:post",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\blogs\\\\_post.vue",
+    "chunkName": "pages/blogs/_post",
+    "_name": "_5ecd4af5"
+  },
+  {
+    "name": "shop-product",
+    "path": "/shop/:product",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\shop\\\\_product.vue",
+    "chunkName": "pages/shop/_product",
+    "_name": "_358cebe6"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Madesoft\\\\Desktop\\\\furniture app\\\\furniture-store\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_56db51bb"
+  }
+]
