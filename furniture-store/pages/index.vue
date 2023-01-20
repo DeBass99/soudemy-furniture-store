@@ -174,11 +174,11 @@
       </b-container>
     </section>
 
-    <section class="testimonials">
+    <!-- <section class="testimonials">
       <b-container class="md">
-        <testimonials />
+        <Testimonials />
       </b-container>
-    </section>
+    </section> -->
   </div>
 </template>
 
