@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapActions } from "Vuex";
+import { mapActions } from "vuex";
 export default {
   props: ["notification"],
 

@@ -84,8 +84,8 @@
 </template>
 
 <script>
-import { mapActions } from "Vuex";
-import { mapState } from "Vuex";
+import { mapActions } from "vuex";
+import { mapState } from "vuex";
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 

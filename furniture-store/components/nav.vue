@@ -282,8 +282,8 @@
 </template>
 
 <script>
-import { mapState } from "Vuex";
-import { mapGetters } from "Vuex";
+import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import "floating-vue/dist/style.css";
 export default {
   props: ["color"],

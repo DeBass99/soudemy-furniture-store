@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import { mapActions } from "Vuex";
-import { mapState } from "Vuex";
-import { mapGetters } from "Vuex";
+import { mapActions } from "vuex";
+import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 export default {
   computed: {
     ...mapState({

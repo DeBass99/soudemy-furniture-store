@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { mapState } from "Vuex";
+import { mapState } from "vuex";
 import { gsap } from "gsap";
 import { Flip } from "gsap/Flip";
 export default {
