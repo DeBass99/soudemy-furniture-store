@@ -15,26 +15,28 @@
           </ul>
         </div>
 
-        <div class="item">
-          <div class="top">Useful</div>
-          <ul>
-            <li>Download product</li>
-            <li>Download product</li>
-            <li>Download product</li>
-            <li>Download product</li>
-            <li>Download product</li>
-          </ul>
-        </div>
+        <div class="split">
+          <div class="item">
+            <div class="top">Useful</div>
+            <ul>
+              <li>Download product</li>
+              <li>Download product</li>
+              <li>Download product</li>
+              <li>Download product</li>
+              <li>Download product</li>
+            </ul>
+          </div>
 
-        <div class="item">
-          <div class="top">Download</div>
-          <ul>
-            <li>instgram</li>
-            <li>facebook</li>
-            <li>Twitter</li>
-            <li>printeress</li>
-            <li>youtube</li>
-          </ul>
+          <div class="item">
+            <div class="top">Download</div>
+            <ul>
+              <li>instgram</li>
+              <li>facebook</li>
+              <li>Twitter</li>
+              <li>printeress</li>
+              <li>youtube</li>
+            </ul>
+          </div>
         </div>
 
         <div class="item">
@@ -77,7 +79,7 @@ a.logo {
 .top {
   font-style: normal;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 20px;
   color: #fff;
 }
 
@@ -96,10 +98,15 @@ a.logo {
 li {
   font-style: normal;
   font-weight: 400;
-  font-size: 23px;
+  font-size: 16px;
   color: #ababab;
   width: 214px;
   margin: 10px 0px;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 600px) {

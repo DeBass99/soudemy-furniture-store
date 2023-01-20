@@ -148,10 +148,14 @@ export default {
 
     //input functions
     increment() {
-      this.quantityOfProduct++;
+      if (this.quantityOfProduct <= 9) {
+        this.quantityOfProduct++;
+      }
     },
     decrement() {
-      this.quantityOfProduct--;
+      if (this.quantityOfProduct >= 1) {
+        this.quantityOfProduct--;
+      }
     },
 
     //Vuex functions
